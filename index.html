@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Text Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #121212;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      .text {
+        position: absolute;
+        font-size: 30px;
+        color: white;
+        opacity: 1;
+        animation: floatUp 3s linear forwards;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createFloatingText() {
+        const textArray = [
+          "Hello!",
+          "This is CodeBy KP!",
+          "Coding is Fun!",
+          "Like,Share and Comment",
+          "Subscribe Now!",
+        ];
+        const text = document.createElement("div");
+        text.classList.add("text");
+        text.innerText =
+          textArray[Math.floor(Math.random() * textArray.length)];
+
+        // Random Position
+        text.style.left = Math.random() * window.innerWidth + "px";
+        text.style.top = window.innerHeight + "px";
+
+        document.body.appendChild(text);
+
+        setTimeout(() => {
+          text.remove();
+        }, 3000);
+      }
+
+      setInterval(createFloatingText, 700);
+    </script>
+  </body>
+</html>
