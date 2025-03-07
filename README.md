@@ -28,7 +28,7 @@ JavaScript - Interactivity
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/floating-text-animation.git
+git clone https://github.com/kpdevSE/floating_text_animation.git
 cd floating-text-animation
 
 2️⃣ Open in Browser
